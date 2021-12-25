@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto');
 
 body {
   font-family: 'Bebas Neue', cursive;
+
+  form {
+    font-family: 'Roboto', sans-serif;
+  }
 }
