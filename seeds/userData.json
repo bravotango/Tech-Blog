@@ -2,6 +2,11 @@
   {
     "username": "bt",
     "email": "bt@mail.com",
-    "password": "123456"
+    "password": "12345678"
+  },
+  {
+    "username": "mom",
+    "email": "mom@home.com",
+    "password": "12345678"
   }
 ]
