@@ -1,7 +1,7 @@
 [
   {
     "title": "test title",
-    "contents": "just some words",
-    "user_id": "1"
+    "content": "just some words",
+    "user_id": 1
   }
 ]
