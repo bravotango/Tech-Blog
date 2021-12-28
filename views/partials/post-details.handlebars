@@ -1,0 +1,13 @@
+<div class='row align-center mb-5' data-id='{{id}}'>
+  <div class='col-md-8'>
+    <h2 class='title'>{{{get_emoji}}} {{title}}</h2>
+  </div>
+  <div class='col-md-4'>
+    <span class='soft'>Posted by</span>
+    {{user.username}}
+    <br />
+    {{moment createdAt 'dddd, MMMM D, YYYY'}}</div>
+  <div class='col-md-12'>
+    <p>{{content}}</p>
+  </div>
+</div>

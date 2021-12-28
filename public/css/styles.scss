@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Bebas+Neue&family=Roboto');
 
 body {
   font-family: 'Bebas Neue', cursive;
 
-  form {
+  p {
     font-family: 'Roboto', sans-serif;
+  }
+  .title,
+  .soft {
+    font-family: 'Open Sans Condensed', sans-serif;
+    opacity: 85%;
+  }
+  form {
+    input,
+    textarea {
+      font-family: 'Roboto', sans-serif;
+    }
   }
 }
