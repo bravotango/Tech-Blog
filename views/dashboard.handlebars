@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="d-grid gap-2">
+    <button class="btn btn-primary btn-lg" type="button" id="showPostForm">Add new post</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Your posts</h2>
+    {{#each posts as |post|}} {{> post-details}}<br />
+    {{/each}}
+  </div>
+</div>
+
+
+<script src='/js/post.js'></script>
+<script>document.querySelector('#showPostForm').addEventListener('click', displayForm);</script>
