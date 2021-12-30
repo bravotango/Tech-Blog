@@ -68,11 +68,27 @@ router.post('/logout', (req, res) => {
 
 router.get('/add', withAuth, (req, res) => {
   res.render('addpost', {
+    loggedIn: req.session.loggedIn,
     user_id: req.session.user_id,
   });
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+// router.get('/comment/:id', withAuth, (req, res) => {
+//   try {
+//     const comment
+//   }
+//   catch(err){
+//     res.status(500).json(err)
+//   }
+
+//   res.render('addcomment', {
+//     loggedIn: req.session.loggedIn,
+//     user_id: req.session.user_id,
+//   });
+// });
+
+// get individual post for comment
+router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
     if (!postData) {
@@ -80,17 +96,14 @@ router.get('/:id', withAuth, async (req, res) => {
       return;
     }
     const post = postData.get({ plain: true });
-    res.render('dashboard', post);
+    res.render('addcomment', post);
   } catch (err) {
     res.status(500).json(err);
   }
 
-  res.render('addpost', {
-    user_id: req.session.user_id,
-  });
-
-  // const painting = dbPaintingData.get({ plain: true });
-  // res.render('painting', { painting, loggedIn: req.session.loggedIn });
+  // res.render('addpost', {
+  //   user_id: req.session.user_id,
+  // });
 });
 
 module.exports = router;

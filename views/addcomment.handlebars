@@ -1,0 +1,31 @@
+{{> post-details id=id}}
+
+<div class='row'>
+  <div class='col-md-12 mb-3'>
+    <h2>Add comment</h2>
+    <div class='p-3 border bg-light'>
+      <form id='comment-form'>
+        <input type='hidden' value='{{user_id}}' id='user_id' />
+        <input type='hidden' value='{{id}}' id='post_id' />
+        <div class='mb-3'>
+          <label for='content-comment' class='form-label'>Comment</label>
+          <textarea
+            class='form-control'
+            id='content-comment'
+            rows='3'
+            required
+          ></textarea>
+        </div>
+
+        <button type='submit' class='btn btn-primary' id='addComment'>Add
+          Comment</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src='/js/comment.js'></script>
+<script>
+  document.getElementById('comment-form').addEventListener('submit',
+  addCommentHandler);
+</script>

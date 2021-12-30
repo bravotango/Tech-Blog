@@ -1,4 +1,4 @@
-const displayForm = async () => {
+const displayPostForm = async () => {
   document.location.replace('/add');
 };
 
