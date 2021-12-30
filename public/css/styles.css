@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Bebas+Neue&family=Roboto");
 body {
   font-family: 'Bebas Neue', cursive;
+  overflow-y: scroll;
+  /* Show vertical scrollbar */
 }
 
 body p {
@@ -18,8 +20,12 @@ body form textarea {
   font-family: 'Roboto', sans-serif;
 }
 
+body .post {
+  padding: 6px;
+}
+
 body .post:hover {
-  background: #b7d0ff;
+  background: #ececec;
   cursor: pointer;
   border-radius: 6px;
 }

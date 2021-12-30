@@ -20,7 +20,7 @@ const addCommentHandler = async (event) => {
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace(`/${post_id}`);
   } else {
     alert('Failed to add comment.');
   }

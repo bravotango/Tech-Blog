@@ -73,20 +73,6 @@ router.get('/add', withAuth, (req, res) => {
   });
 });
 
-// router.get('/comment/:id', withAuth, (req, res) => {
-//   try {
-//     const comment
-//   }
-//   catch(err){
-//     res.status(500).json(err)
-//   }
-
-//   res.render('addcomment', {
-//     loggedIn: req.session.loggedIn,
-//     user_id: req.session.user_id,
-//   });
-// });
-
 // get individual post for comment
 router.get('/:id', withAuth, async (req, res) => {
   try {

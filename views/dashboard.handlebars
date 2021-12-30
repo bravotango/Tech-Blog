@@ -4,10 +4,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 post-list">
     <h2>Your posts</h2>
-    {{#each posts as |post|}} 
-      <div>{{> post-details}}</div>
+    {{#each posts as |post|}}
+      <div><button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>{{> post-details}}</div>
     {{/each}}
   </div>
 </div>
