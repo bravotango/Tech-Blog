@@ -1,17 +1,28 @@
-{{> post-details id=id}}
+{{> post-details post}}
+
+
+{{#if post.comments.length}}
+<h2>Comments</h2>
+  <ul class='list-group list-group-flush'>
+    {{#each post.comments as |comment|}}
+      <li class='list-group-item'>{{> comment-details}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
 
 <div class='row'>
   <div class='col-md-12 mb-3'>
     <h2>Add comment</h2>
     <div class='p-3 border bg-light'>
       <form id='comment-form'>
-        <input type='hidden' value='{{user_id}}' id='user_id' />
-        <input type='hidden' value='{{id}}' id='post_id' />
+        <input type='hidden' name='user_id' value='{{user_id}}' id='user_id' />
+        <input type='hidden' name='post_id' value='{{post.id}}' id='post_id' />
         <div class='mb-3'>
-          <label for='content-comment' class='form-label'>Comment</label>
+          <label for='content' class='form-label'>Comment</label>
           <textarea
             class='form-control'
-            id='content-comment'
+            name='content'
+            id='content'
             rows='3'
             required
           ></textarea>
