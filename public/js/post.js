@@ -8,7 +8,6 @@ const addPostHandler = async (event) => {
   const content = document.querySelector('#content-post').value.trim();
   const user_id = document.querySelector('#user_id-post').value.trim();
 
-  console.log(title, content, user_id);
   const response = await fetch('/api/posts', {
     method: 'POST',
     body: JSON.stringify({ title, content, user_id }),

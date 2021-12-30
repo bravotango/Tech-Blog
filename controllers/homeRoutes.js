@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -88,22 +88,26 @@ router.get('/add', withAuth, (req, res) => {
 // });
 
 // get individual post for comment
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, {
+      include: [User, { model: Comment, include: User }],
+    });
     if (!postData) {
       res.status(404).json({ message: 'No post with this id.' });
       return;
     }
+
     const post = postData.get({ plain: true });
-    res.render('addcomment', post);
+
+    res.render('addcomment', {
+      post,
+      loggedIn: req.session.loggedIn,
+      user_id: req.session.user_id,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
-
-  // res.render('addpost', {
-  //   user_id: req.session.user_id,
-  // });
 });
 
 module.exports = router;
