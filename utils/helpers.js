@@ -1,16 +1,15 @@
 module.exports = {
-  get_emoji: () => {
-    const randomNum = Math.random();
-    let book = '📗';
+  get_emoji: (id) => {
+    let postIcon = '📗';
 
-    if (randomNum > 0.75) {
-      book = '📘';
-    } else if (randomNum > 0.5) {
-      book = '📙';
-    } else if (randomNum > 0.25) {
-      book = '📒';
+    if (id % 4 === 0) {
+      postIcon = '📘';
+    } else if (id % 3 === 0) {
+      postIcon = '📙';
+    } else if (id % 2 === 0) {
+      postIcon = '📒';
     }
 
-    return `<span for="img" aria-label="book">${book}</span>`;
+    return `<span for="img" aria-label="post-icon">${postIcon}</span>`;
   },
 };
