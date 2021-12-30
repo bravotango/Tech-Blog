@@ -9,12 +9,17 @@ body {
   .title,
   .soft {
     font-family: 'Open Sans Condensed', sans-serif;
-    opacity: 85%;
+    opacity: 90%;
   }
   form {
     input,
     textarea {
       font-family: 'Roboto', sans-serif;
     }
+  }
+  .post:hover {
+    background: rgb(183, 208, 255);
+    cursor: pointer;
+    border-radius: 6px;
   }
 }

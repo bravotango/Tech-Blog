@@ -2,15 +2,20 @@
   <div class='col-md-12 mb-3'>
     <h2>Add new post</h2>
     <div class='p-3 border bg-light'>
-      <form class='post-form'>
+      <form id='post-form'>
         <input type='hidden' value='{{user_id}}' id='user_id-post' />
         <div class='mb-3'>
           <label for='title-post' class='form-label'>Title</label>
-          <input type='text' class='form-control' id='title-post' />
+          <input type='text' class='form-control' id='title-post' required />
         </div>
         <div class='mb-3'>
           <label for='content-post' class='form-label'>Post</label>
-          <textarea class='form-control' id='content-post' rows='3'></textarea>
+          <textarea
+            class='form-control'
+            id='content-post'
+            rows='3'
+            required
+          ></textarea>
         </div>
 
         <button type='submit' class='btn btn-primary' id='addPost'>Add Post</button>
@@ -20,5 +25,7 @@
 </div>
 
 <script src='/js/post.js'></script>
-<script>document.querySelector('#addPost').addEventListener('click',
-  addPostHandler);</script>
+<script>
+  document.getElementById('post-form').addEventListener('submit',
+  addPostHandler);
+</script>

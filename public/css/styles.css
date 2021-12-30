@@ -10,11 +10,17 @@ body p {
 body .title,
 body .soft {
   font-family: 'Open Sans Condensed', sans-serif;
-  opacity: 85%;
+  opacity: 90%;
 }
 
 body form input,
 body form textarea {
   font-family: 'Roboto', sans-serif;
+}
+
+body .post:hover {
+  background: #b7d0ff;
+  cursor: pointer;
+  border-radius: 6px;
 }
 /*# sourceMappingURL=styles.css.map */

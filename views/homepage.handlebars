@@ -1,3 +1,15 @@
+
 {{#each posts as |post|}}
-{{> post-details}}<br/>
+  <div class="post">{{> post-details id=id}}</div>
 {{/each}}
+
+<script src='/js/comment.js'></script>
+<script>
+  const posts = document.querySelectorAll('div.post')
+  posts.forEach((post)=>{
+    post.addEventListener('click', function() {
+      postClickHandler(post.firstElementChild.getAttribute('data-post-id'));
+  })
+  })
+  
+</script>
