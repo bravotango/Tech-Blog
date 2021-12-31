@@ -18,7 +18,6 @@ const PORT = process.env.PORT || 5000;
 
 const hbs = exphbs.create({ helpers });
 
-// TODO: Add a comment describing the functionality of this object
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -29,7 +28,6 @@ const sess = {
   }),
 };
 
-// TODO: Add a comment describing the functionality of this statement
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
