@@ -35,9 +35,9 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
-    const update = Post.update(
+    const update = await Post.update(
       {
         title: req.body.title,
         content: req.body.content,

@@ -9,7 +9,7 @@
     {{#each posts as |post|}}
       <div>
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>
-        <button class="btn btn-sm btn-warning" data-update-id="{{post.id}}">Update</button>
+        <a class="btn btn-sm btn-warning" href="/dashboard/{{post.id}}" data-update-id="{{post.id}}">Update</a>
         {{> post-details}}</div>
     {{/each}}
   </div>
@@ -17,4 +17,8 @@
 
 
 <script src='/js/post.js'></script>
-<script>document.querySelector('#showPostForm').addEventListener('click', displayPostForm);</script>
+<script>document.querySelector('#showPostForm').addEventListener('click', displayPostForm);
+document
+  .querySelector('.post-list')
+  .addEventListener('click', delButtonHandler);
+</script>

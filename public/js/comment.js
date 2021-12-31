@@ -7,7 +7,6 @@ const addCommentHandler = async (event) => {
 
   const formData = new FormData(event.target);
   const formProps = Object.fromEntries(formData);
-  console.log('formProps', formProps.post_id);
 
   const post_id = formProps.post_id.trim();
   const user_id = formProps.user_id.trim();
