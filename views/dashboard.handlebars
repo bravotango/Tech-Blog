@@ -7,7 +7,10 @@
   <div class="col-md-12 post-list">
     <h2>Your posts</h2>
     {{#each posts as |post|}}
-      <div><button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>{{> post-details}}</div>
+      <div>
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>
+        <button class="btn btn-sm btn-warning" data-update-id="{{post.id}}">Update</button>
+        {{> post-details}}</div>
     {{/each}}
   </div>
 </div>
