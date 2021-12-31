@@ -14,7 +14,7 @@ var MomentHandler = require('handlebars.moment');
 MomentHandler.registerHelpers(Handlebars);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 const hbs = exphbs.create({ helpers });
 
