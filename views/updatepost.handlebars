@@ -1,8 +1,42 @@
-<div class='row'>
-  <div class='col-md-12 mb-3'>
-    <h2>Update new post</h2>
-    {{greeting}}
-    ID:
-    {{post.id}}
+<div class='row align-center'>
+  <div class='p-3 border bg-light'>
+    <form id='post-form'>
+      <input
+        type='hidden'
+        name='user_id'
+        value='{{post.user_id}}'
+        id='user-id'
+      />
+      <input type='hidden' name='post_id' value='{{post.id}}' id='post-id' />
+      <div class='mb-3'>
+        <label for='title-post' class='form-label'>Title</label>
+        <input
+          type='text'
+          class='form-control'
+          name='title'
+          value='{{post.title}}'
+          id='title-post'
+          required
+        />
+      </div>
+      <div class='mb-3'>
+        <label for='content-post' class='form-label'>Post</label>
+        <textarea
+          class='form-control'
+          id='content-post'
+          name='content'
+          rows='3'
+          required
+        >{{post.content}}</textarea>
+      </div>
+
+      <button type='submit' class='btn btn-primary' id='updatePost'>Update Post</button>
+    </form>
   </div>
 </div>
+
+<script src='/js/post.js'></script>
+<script>
+  document.getElementById('post-form').addEventListener('submit',
+  updatePostHandler);
+</script>

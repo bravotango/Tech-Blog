@@ -64,27 +64,6 @@ router.get('/dashboard/:id', async (req, res) => {
   }
 });
 
-// router.get('/dashboard/:id', withAuth, async (req, res) => {
-//   try {
-//     const postData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['id', 'username'],
-//         },
-//       ],
-//     });
-//     const posts = postData.map((post) => post.get({ plain: true }));
-
-//     res.render('dashboard', {
-//       posts,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

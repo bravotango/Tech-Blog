@@ -37,27 +37,25 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-update-id')) {
-    const id = event.target.getAttribute('data-post-id');
+const updatePostHandler = async (event) => {
+  event.preventDefault();
 
-    const response = await fetch(`/api/posts/${id}`, {
-      method: 'UPDATE',
-      body: JSON.stringify({ title, content }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+  const formData = new FormData(event.target);
+  const formProps = Object.fromEntries(formData);
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to update post');
-    }
+  const post_id = formProps.post_id.trim();
+  const title = formProps.title.trim();
+  const content = formProps.content.trim();
+
+  const response = await fetch(`/api/posts/${post_id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ title, content }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to update post');
   }
 };
-
-document
-  .querySelector('.post-list')
-  .addEventListener('click', delButtonHandler);
-document
-  .querySelector('.post-list')
-  .addEventListener('click', updateButtonHandler);
