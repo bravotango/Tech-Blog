@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="d-grid gap-2">
+  <div class="d-grid gap-2 mb-3">
     <button class="btn btn-primary btn-lg" type="button" id="showPostForm">Add new post</button>
   </div>
 </div>
@@ -8,15 +8,15 @@
     <h2>Your posts</h2>
     {{#each posts as |post|}}
     <div class="row">
-      <div class="col-md-2">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>
-        <a class="btn btn-sm btn-warning" href="/dashboard/{{post.id}}" data-update-id="{{post.id}}">Update</a>
+      <div class="col-md-2 mb-2">
+        <button class="btn btn-sm btn-danger mb-1" data-id="{{post.id}}">Delete</button>
+        <a class="btn btn-sm btn-warning mb-1" href="/dashboard/{{post.id}}" data-update-id="{{post.id}}">Update</a>
       </div>
       <div class="col-md-10">
         {{> post-details}}
         </div>
       </div>
-      <hr/>
+      <hr>
     {{/each}}
   </div>
 </div>

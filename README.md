@@ -132,7 +132,8 @@ This homework is graded based on the following criteria:
 You are required to submit BOTH of the following for review:
 
 - The URL of the functional, deployed application.
-
+  [https://bt-tech-blog.herokuapp.com/](https://bt-tech-blog.herokuapp.com/)
 - The URL of the GitHub repository, with a unique name and a readme describing the project.
+  [https://github.com/bravotango/Tech-Blog](https://github.com/bravotango/Tech-Blog)
 
 ---
