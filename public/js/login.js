@@ -8,7 +8,6 @@ const loginFormHandler = async (event) => {
   const password = formProps.password.trim();
 
   if (email && password) {
-    // Use the inputted values to login, if successful, route to '/' homepage otherwise display login error
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
