@@ -6,13 +6,14 @@
         <form class="login-form">
           <div class='mb-3'>
             <label for='email-login' class='form-label'>Email address</label>
-            <input type='email' class='form-control' id='email-login' />
+            <input type='email' class='form-control' name='email' id='email-login' />
           </div>
           <div class='mb-3'>
             <label for='password-login' class='form-label'>Password</label>
             <input
               type='password'
               class='form-control'
+              name='password'
               id='password-login'
             />
           </div>
@@ -29,6 +30,7 @@
             <input
               type='text'
               class='form-control'
+              name='username'
               id="username-signup"
             />
           </div>
@@ -37,7 +39,8 @@
             <input
               type='email'
               class='form-control'
-              id="email-signup"
+              name='email'
+              id='email-signup'
               aria-describedby='emailHelp'
             />
             <div id='emailHelp' class='form-text'>We'll never share your email
@@ -48,6 +51,7 @@
             <input
               type='password'
               class='form-control'
+              name='password'
               id="password-signup"
               minlength=8
               aria-describedby='passwordHelp'
