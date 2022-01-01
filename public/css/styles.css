@@ -9,6 +9,10 @@ body p {
   font-family: 'Roboto', sans-serif;
 }
 
+body .focus {
+  font-size: 115%;
+}
+
 body .title,
 body .soft {
   font-family: 'Open Sans Condensed', sans-serif;
