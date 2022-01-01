@@ -1,10 +1,11 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  // TODO: Add a comment describing the functionality of these expressions
-  // TODO: SUBMIT FORM - grab values from submitted form
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const formData = new FormData(event.target);
+  const formProps = Object.fromEntries(formData);
+
+  const email = formProps.email.trim();
+  const password = formProps.password.trim();
 
   if (email && password) {
     // Use the inputted values to login, if successful, route to '/' homepage otherwise display login error
@@ -15,7 +16,6 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      console.log('logged in');
       document.location.replace('/');
     } else {
       alert('Failed to log in');
@@ -26,9 +26,12 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const formData = new FormData(event.target);
+  const formProps = Object.fromEntries(formData);
+
+  const username = formProps.username.trim();
+  const email = formProps.email.trim();
+  const password = formProps.password.trim();
 
   if (username && email && password) {
     const response = await fetch('/api/users', {
