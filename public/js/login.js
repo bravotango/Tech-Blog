@@ -4,13 +4,13 @@ const loginFormHandler = async (event) => {
   const formData = new FormData(event.target);
   const formProps = Object.fromEntries(formData);
 
-  const email = formProps.email.trim();
+  const username = formProps.username.trim();
   const password = formProps.password.trim();
 
-  if (email && password) {
+  if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
