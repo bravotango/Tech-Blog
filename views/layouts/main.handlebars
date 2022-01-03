@@ -30,7 +30,7 @@
         <a href='/'>Homepage</a>
         <a href='/dashboard'>Dashboard</a>
 
-        {{#if loggedIn}}
+        {{#if logged_in}}
           <a id='logout' class='btn-no-style'>Logout</a>
         {{else}}
           <a href='/login'>Login</a>
@@ -52,7 +52,7 @@
       integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
       crossorigin='anonymous'
     ></script>
-    {{#if loggedIn}}
+    {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}
   </body>

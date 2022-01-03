@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -39,7 +39,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     res.render('dashboard', {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -65,7 +65,7 @@ router.get('/dashboard/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -75,7 +75,7 @@ router.get('/login', (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
@@ -86,7 +86,7 @@ router.post('/logout', (req, res) => {
 
 router.get('/add', withAuth, (req, res) => {
   res.render('addpost', {
-    loggedIn: req.session.loggedIn,
+    logged_in: req.session.logged_in,
     user_id: req.session.user_id,
   });
 });
@@ -106,7 +106,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
     res.render('addcomment', {
       post,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
       user_id: req.session.user_id,
     });
   } catch (err) {
